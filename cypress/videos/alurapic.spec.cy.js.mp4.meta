@@ -1,0 +1,16 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=15269
+END=17906
+title=Login e registro de usuarios alura pic verifica mensagens validacao
+[CHAPTER]
+TIMEBASE=1/1000
+START=19123
+END=20547
+title=Login e registro de usuarios alura pic verifica mensagem de email invalido
+[CHAPTER]
+TIMEBASE=1/1000
+START=20366
+END=21979
+title=Login e registro de usuarios alura pic verifica mensagem de SENHA COM MENOS DE 8 CARACTERES
