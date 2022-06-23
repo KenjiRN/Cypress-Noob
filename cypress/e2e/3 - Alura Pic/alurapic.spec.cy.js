@@ -27,4 +27,34 @@ describe('Login e registro de usuarios alura pic', () => {
         cy.contains('button', 'Register').click();    
         cy.contains('ap-vmessage', 'Mininum length is 8').should('be.visible');   
     })
+    it.only('fazer login de usuario valido', () => {
+        cy.get('input[formcontrolname="userName"]').type('flavio');
+        cy.get('input[formcontrolname="password"]').type('123'); 
+        cy.get('button[type="submit"]').click();
+
+        // cy.login('flavio','123')
+        cy.contains('a', '(Logout)').should('be.visible');    
+    })
+    it.only('fazer login de usuario invalido', () => {
+        cy.get('input[formcontrolname="userName"]').type('jacqueline');
+        cy.get('input[formcontrolname="password"]').type('1234'); 
+        cy.get('button[type="submit"]').click();
+
+        // cy.login('jacqueline','1234')
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('Invalid user name or password')
+        })
+    })
+
+
+    it.only('Registra novo usuário',() => {
+        cy.contains('a', 'Register now').click();
+        cy.contains('button', 'Register').click();
+        cy.get('input[formcontrolname="email"]').type('jacqueline.oliveira@alura.com.br');
+        cy.get('input[formcontrolname="fullName"]').type('Jacqueline Oliveira');
+        cy.get('input[formcontrolname="userName"]').type('jacqueline');
+        cy.get('input[formcontrolname="password"]').type('jacqueline');
+        cy.contains('button', 'Register').click();
+
+    })
 })
